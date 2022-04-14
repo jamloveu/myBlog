@@ -6,7 +6,7 @@ languageCode = "zh-CN"
 # 是否包括中日韩文字
 hasCJKLanguage = true
 # 网站标题
-title = "我的全新 Hugo 网站"
+title = "Jam's Note"
 # 网站描述
 description = "jam的博客"
 
@@ -58,11 +58,11 @@ theme = "FixIt"
     # 排列图标时的权重（权重越大，图标的位置越靠后）
     weight = 0
     # 你的社交 ID
-    id = "@xxxx"
+    id = "jamloveu"
     # 你的社交链接的前缀
-    prefix = "https://mastodon.social/"
+    prefix = "https://github.com/"
     # 当鼠标停留在图标上时的提示内容
-    title = "Mastodon"
+    title = "github"
 
   # Home page config
   [params.home]
@@ -78,9 +78,9 @@ theme = "FixIt"
       # URL of avatar shown in home page
       avatarURL = "/images/avatar.jpg"
       #  title shown in home page (HTML format is supported)
-      title = "Jam's Note"
+      title = "Hi Jam"
       # subtitle shown in home page
-      subtitle = "不怕萬人阻擋，只怕自己投降"
+      subtitle = "人行天地间，忽如远行客。"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
