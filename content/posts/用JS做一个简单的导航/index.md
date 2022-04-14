@@ -1,9 +1,43 @@
 ---
-title: "用JS做一个简单的导航"
-date: 2017-12-14T22:37:42+08:00
-author: "jam"
+title: "用JS做一个导航"
+subtitle: ""
+date: 2017-02-14T01:00:23+08:00
 draft: false
+author: "jam"
+authorLink: ""
+description: ""
+keywords: ""
+license: ""
+comment: false
+weight: 0
+
+tags:
+- 导航
+categories:
+- 项目学习
+
+hiddenFromHomePage: false
+hiddenFromSearch: false
+
+summary: ""
+resources:
+- name: featured-image
+  src: featured-image.jpg
+- name: featured-image-preview
+  src: featured-image-preview.jpg
+
+toc:
+  enable: true
+math:
+  enable: false
+lightgallery: false
+seo:
+  images: []
+
+# See details front matter: /theme-documentation-content/#front-matter
 ---
+
+<!--more-->
 
 # 预览：
 ![](images/1.png)
