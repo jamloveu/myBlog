@@ -78,9 +78,9 @@ theme = "FixIt"
       # URL of avatar shown in home page
       avatarURL = "/images/avatar.jpg"
       #  title shown in home page (HTML format is supported)
-      title = "Hi Jam"
+      title = "Hi JAM"
       # subtitle shown in home page
-      subtitle = "人行天地间，忽如远行客。"
+      subtitle = "一个简简单单的博客。"
       # whether to use typeit animation for subtitle
       typeit = true
       # whether to show social links
