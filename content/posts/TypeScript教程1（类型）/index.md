@@ -1,5 +1,5 @@
 ---
-title: "TypeScript教程"
+title: "TypeScript教程1（类型）"
 subtitle: ""
 date: 2022-04-18T21:54:53+08:00
 draft: false
@@ -74,6 +74,11 @@ function fn(参数:类型, 参数:类型):类型{
 | unknown | * | 类型安全的any |
 | void | 空值（undefiend） | 没有值（或者undefined） |
 | never | 没有值 | 不能是任何值（用的少） |
+| object | {name:"jam"} | 任意的JS对象 (一般不使用) |
+| array | [1,2,3,4] | 任意的JS数组 |
+| tuple | [4,5] | 元组，TS新增类型，固定长度数组 |
+| enum | enum{A,B} | 枚举，TS中新增类型 | 
+
 
 - 可以使用 | 来连接多个类型
 - any 表示的任意类型，一个变量设置类型为any后相当于对该变量关闭了TS的类型检测，使用TS中，不建议使用any类型
@@ -106,6 +111,97 @@ s = <string>e
 */
 ```
 - void 用来表示为空，以函数为例，就表示没有返回值的函数
+-  对象一般这样用：
+```
+let a: object
+a = {}
+a = function(){}
+
+//这样不会报错...
+
+let b:{
+  name: string,
+  age?: number
+}
+
+b = { name:"jam" }
+//加了?后表示属性为可选属性
+
+let c = { name:string }
+c = { name: 'jam', a:1,b:2 }
+
+//这样会报错，总不能把所有的属性都写下来吧，可以这样写：
+
+//表示可以有任意属性
+let d = { name:string,[propName:string]:any }
+d = { name: 'jam', a:1,b:2 }
+```
+- 如何定义一个函数，指定参数的类型和返回值？【设置函数结构的类型声明，语法：(形参: 类型, 形参: 类型 ...)=> 返回值】
+```
+let c = (a:number,b:number)=>number
+c = function(n1:number, n2:number):number{
+  return n1 + n2
+}
+
+```
+- 数组的语法： 类型[] 或者 Array<类型>
+```
+// string[] 表示字符串数组
+let e: string[]
+e = ['a','b','c']
+
+let f = number[] 表示数值数组
+或者
+let f1 = Array<number>
+
+f = [1,13,3,4]
+```
+- 元组：固定长度的数组 
+```
+let h:[string,string]
+// 只能写两个且类型必须是string
+h =['aa','bbb']
+```
+- enum 枚举
+
+```
+let i:{ name:string, gender: 0 | 1 }
+i = {
+  name: '孙悟空',
+  gender: 1
+}
+
+// 上面的0,1虽然可行，但是不能明确它对应的含义,此时就可以用enum:
+
+enum Gender{
+  Male,
+  Female
+}
+// 也可以指定值：
+enum Gender{
+  Male = 0,
+  Female = 1
+}
+
+let i1:{ name:string, gender: Gender }
+i = {
+  name: '孙悟空',
+  gender: Gender.Male
+}
 
 
+console.log(i.gender === Gender.Male)
+```
+- & 表示同时：
+```
+let j:{ name: string } & { age:number }
+j = { name:'jam', age:18 }
+```
 
+- 类型的别名：
+```
+type myType = 1 | 2 | 3 | 4 | 5
+let k = 1 | 2 | 3 | 4 | 5
+let k1 = myType
+
+```
